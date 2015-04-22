@@ -1,55 +1,92 @@
-/*
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: middle;
-}
+/* the whole webpage structure */
 
-.navbar .navbar-collapse {
-    text-align: center;
-}
-*/
+/* footer in the bottom has 5% height of browser height */
 
 html,
 body {
+    display: block; /* it must be block as default */
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
-/*
-#wrapper {
-    min-height: 100%;
-    position: relative;
-}
-
-#buffer {
-    position: absolute;
-    bottom: top;
-    min-height: 100%;
+.not-footer {
+    display: block; /* it must be block as default */
+    overflow: hidden;
     width: 100%;
+    min-height: 100%; /* at least 100% */
+    margin: 0 0 -50px; /* leave 50px for footer */
+    padding: 0;
 }
-*/
+
+.not-footer-buffer {
+    height: 50px; /* 50px */
+}
 
 .footer {
-    /*
-    position: absolute;
+    display: block; /* it must be block as default */
     bottom: 0;
     width: 100%;
-    height: 60px;
-    */
-    padding: 1.5%;
+    height: 50px; /* 50px */
+    margin: 0;
+    padding: 0;
+}
+
+/* set up footer style */
+
+.footer .footer-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0%;
+    /* the following are the style inside the footer */
     background-color: #428bca;
     text-align: center;
 }
 
-.navbar .navbar-collapse .navbar-form-no-border {
-    border: 0;
+.footer .footer-row {
+    display: table-row;
 }
 
-.navbar .navbar-toggle-float-left {
-    float: left;
-    margin-left: 15px;
+.footer .footer-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer p {
+    margin: 0;
+    color: #333333;
+}
+
+/* set up max container width */
+
+.container {
+    max-width: 700px;
+}
+
+/* set up core data area */
+
+.container-core {
+    margin-top: 50px;
+    padding: 0 15px 0;
+}
+
+/* set up search style */
+
+#id-search-key .input-group {
+    width: 50%;
+}
+
+#id-search-key #search-clear {
+    cursor: pointer;
+    pointer-events: auto;
+    &:hover {
+        color: #777;
+        color: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+    }
 }
 
 .row-no-margin .row {
@@ -61,29 +98,24 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 700px;
-}
+/* set up narbar */
 
-.container-core {
-    margin-top: 50px;
-    padding: 0 15px 0;
-}
-
-.footer p {
-    margin: 0;
-    color: #333333;
-}
-
-.navbar .navbar-nav {
+.nav li {
     display: inline-block;
-    float: none;
     vertical-align: middle;
+    float: none;
+}
+
+.navbar .navbar-toggle-float-left {
+    float: left;
+    margin-left: 15px;
 }
 
 .navbar .navbar-collapse {
     text-align: center;
 }
+
+/* set up narbar color */
 
 .navbar-default {
     background-color: #b3d1ea;
